@@ -95,7 +95,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="博客，文章," />
+  <meta name="keywords" content="markdown," />
 
 
 
@@ -111,17 +111,17 @@
 
 
 
-<meta name="description" content="#这里是正文，用markdown写，你可以选择写一段显示在首页的简介后，加上">
-<meta name="keywords" content="博客，文章">
+<meta name="description" content="第一次写博客，先学习一下Markdown, 这篇文章是我对学习markdown的使用的简单总结">
+<meta name="keywords" content="markdown">
 <meta property="og:type" content="article">
 <meta property="og:title" content="my first blog">
 <meta property="og:url" content="http://yoursite.com/2017/07/02/my-first-blog/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="#这里是正文，用markdown写，你可以选择写一段显示在首页的简介后，加上">
-<meta property="og:updated_time" content="2017-07-02T11:47:40.601Z">
+<meta property="og:description" content="第一次写博客，先学习一下Markdown, 这篇文章是我对学习markdown的使用的简单总结">
+<meta property="og:updated_time" content="2017-07-04T10:22:39.735Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="my first blog">
-<meta name="twitter:description" content="#这里是正文，用markdown写，你可以选择写一段显示在首页的简介后，加上">
+<meta name="twitter:description" content="第一次写博客，先学习一下Markdown, 这篇文章是我对学习markdown的使用的简单总结">
 
 
 
@@ -379,6 +379,10 @@
           
 
           
+              <div class="post-description">
+                  第一次写博客，先学习一下Markdown, 这篇文章是我对学习markdown的使用的简单总结
+              </div>
+          
 
         </div>
       </header>
@@ -390,8 +394,115 @@
       
 
       
-        <p>#这里是正文，用markdown写，你可以选择写一段显示在首页的简介后，加上</p>
-<h2 id="在之前的内容会显示在首页，之后的内容会被隐藏，当游客点击Read-more才能看到。"><a href="#在之前的内容会显示在首页，之后的内容会被隐藏，当游客点击Read-more才能看到。" class="headerlink" title="#在之前的内容会显示在首页，之后的内容会被隐藏，当游客点击Read more才能看到。"></a><a id="more"></a>#在<!--more-->之前的内容会显示在首页，之后的内容会被隐藏，当游客点击Read more才能看到。</h2>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>HTML是一种发布的格式，Markdown是一种书写的格式。可以直接在Markdown中混入HTML的内容，但是有以下几点需要注意：</p>
+<ul>
+<li>一些 HTML 块元素――比如 div、table、pre、p 等标签，必须在前后加上空行与其它内容区隔开，<br>还要求它们的开始标签与结尾标签不能用制表符或空格来缩进。Markdown 的生成器有足够智能，<br>不会在 HTML 区块标签外加上不必要的 p 标签。</li>
+<li>HTML 块元素标签内的 Markdown 格式语法不会被处理。</li>
+<li>HTML 行内元素可以在 Markdown 格式内随意使用</li>
+</ul>
+<a id="more"></a>
+<blockquote>
+<p>读Markdown使用文档中有两个概念要强调一下，区块元素和区段元素，区块元素对应 HTML 中的块元素，区段元素对应 HTML<br>中的行内元素（仅是我的理解）</p>
+</blockquote>
+<h2 id="区块元素"><a href="#区块元素" class="headerlink" title="区块元素"></a>区块元素</h2><ul>
+<li>段落<ul>
+<li>前后要有一个以上的空行</li>
+<li>普通段落不要用空格或制表符缩进</li>
+</ul>
+</li>
+<li>换行</li>
+<li><p>标题</p>
+<ul>
+<li>两种格式</li>
+<li><p>1 ~ 6 个 # 对应6级标题</p>
+<pre><code>this is head     this is head
+============     -----------
+#
+##
+###
+</code></pre></li>
+</ul>
+</li>
+<li><p>引用</p>
+<ul>
+<li><code>&gt;</code>表示引用</li>
+</ul>
+</li>
+<li>列表<ul>
+<li>无序列表在每一项开头加上“*”、“+”、“－”(减号好像不起作用)</li>
+<li>有序列表有每一项开关加上“1”、“2” …..</li>
+<li>列表项目标记通常是放在最左边，但是其实也可以缩进，最多 3 个空格，项目标记后面则一定要接着至少一个空格或制表符。</li>
+</ul>
+</li>
+<li><p>代码区块</p>
+<ul>
+<li>只要简单地缩进 4 个空格或是 1 个制表符就可以</li>
+<li>一个代码区块会一直持续到没有缩进的那一行（或是文件结尾）。</li>
+<li><p>在代码区块里面， &amp; 、 &lt; 和 &gt; 会自动转成 HTML 实体</p>
+<pre><code>var arr = [];
+console.log(arr);
+
+&lt;div class=&quot;footer&quot;&gt;
+     &amp;copy; 2004 Foo Corporation
+&lt;/div&gt;
+</code></pre></li>
+</ul>
+</li>
+<li><p>分隔线</p>
+<ul>
+<li>你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格<pre><code>* * *
+***
+- - -
+_ _ _ _ _
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<hr>
+<hr>
+<hr>
+<h2 id="区段元素"><a href="#区段元素" class="headerlink" title="区段元素"></a>区段元素</h2><ul>
+<li><p>链接</p>
+<ul>
+<li><p>This is <a href="http://example.com/" title="Title" target="_blank" rel="external">an example</a> inline link.</p>
+<pre><code>This is [an example](http://example.com/ &quot;Title&quot;)
+</code></pre></li>
+<li><p><a href="http://example.net/" target="_blank" rel="external">This link</a> has no title attribute.</p>
+<pre><code>[This link](http://example.net/) 
+</code></pre></li>
+<li><p><a href="http://example.com/" title="Title" target="_blank" rel="external">example</a></p>
+<pre><code>&lt;a href=&quot;http://example.com/&quot; title=&quot;Title&quot;&gt;example&lt;/a&gt;
+</code></pre></li>
+</ul>
+</li>
+<li><p>强调 </p>
+<ul>
+<li>Markdown 使用星号（<em>）和底线（_）作为标记强调字词的符号，被 </em> 或 <em> 包围的字词会被转成用 em 标签包围，用两个 * 或 </em> 包起来的话，则会被转成 strong</li>
+<li>如果你的 * 和 _ 两边都有空白的话，它们就只会被当成普通的符号。</li>
+</ul>
+</li>
+<li>代码<ul>
+<li><code>如果要标记一小段行内代码，你可以用反引号把它包起来（`）</code></li>
+<li>在代码区段内，&amp; 和方括号都会被自动地转成 HTML 实体，这使得插入 HTML 原始码变得很容易<ul>
+<li>Use the <code>printf()</code> function.</li>
+<li>A single backtick in a code span: <code>` </code></li>
+<li>A backtick-delimited string in a code span: <code>`foo` </code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>图片<ul>
+<li>格式： <code>![]()</code></li>
+<li>到目前为止， Markdown 还没有办法指定图片的宽高，如果需要的话，可以使用普通的 <img> 标签。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ihubo = &#123;</div><div class="line">  <span class="attr">nickName</span>  : <span class="string">"草依山"</span>,</div><div class="line">  <span class="attr">site</span> : <span class="string">"http://jser.me"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
+<li><a href="http://www.markdown.cn/#block-elements" target="_blank" rel="external">http://www.markdown.cn/#block-elements</a></li>
+<li><a href="http://mahua.jser.me/" target="_blank" rel="external">http://mahua.jser.me/</a></li>
+</ol>
+
       
     </div>
 
@@ -420,7 +531,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/博客，文章/" rel="tag"># 博客，文章</a>
+            <a href="/tags/markdown/" rel="tag"># markdown</a>
           
         </div>
       
@@ -608,7 +719,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#在之前的内容会显示在首页，之后的内容会被隐藏，当游客点击Read-more才能看到。"><span class="nav-number">1.</span> <span class="nav-text">#在之前的内容会显示在首页，之后的内容会被隐藏，当游客点击Read more才能看到。</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区块元素"><span class="nav-number">2.</span> <span class="nav-text">区块元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区段元素"><span class="nav-number">3.</span> <span class="nav-text">区段元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文献"><span class="nav-number">4.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
             
 
           </div>
